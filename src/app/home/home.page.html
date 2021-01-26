@@ -14,7 +14,11 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button (click)="scan()">バーコードスキャン</ion-button>
+    <div *ngIf="scanedProduct">
+        <ion-item>商品ID:{{ scanedProduct.id }}</ion-item>
+        <ion-item>商品名:{{ scanedProduct.name }}</ion-item>
+        <ion-item>バーコード:{{ scanedProduct.barcode }}</ion-item>
+    </div>
   </div>
 </ion-content>
